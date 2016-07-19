@@ -1,0 +1,76 @@
+#header{
+	margin-top: 10px;
+	font-size: 19 px;
+	font-family:cursive;
+}
+
+#button{
+    display: inline-block;
+    height:20px;
+	width:70px;
+	background-color:#cc0000;
+	font-family:arial;
+	font-weight:bold;
+	color:#ffffff;
+	border-radius: 5px;
+	text-align:center;
+	margin-top:4px;
+	padding-top: 0px
+}
+
+#head1{
+	background-color = blue;
+}
+
+.row{
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	border-radius: 10px;
+}
+
+#title {
+	color: indigo;
+
+}
+
+
+.frontList{
+	border: 7px solid black;
+	margin: 4px 4px 4px 4px;
+	font-size: 18px;
+}
+
+li:hover{
+	transform: scale(1.1);
+
+}
+
+#result {
+	width: 50%;
+	display:inline-block;
+	word-wrap:break-word;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.kiddie{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.kiddie:hover {
+	transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+

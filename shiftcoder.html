@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<title>Shift Coder/Decoder</title>
+
+<style>
+</style>
+</head>
+<body>
+
+<div class="fluid-container">
+
+  <h2 class = "text-center"> Shift encoder</h2>
+  <br>
+  <br>
+
+
+  <div class = "row">
+    <div class = "col-xs-6">
+      <h2> Enter the message to be encoded in the first box, and the number to shift in the second.</h2>
+       <!-- form to collect message -->
+      <form style = 'display : inline-block' name ="toCode">
+        <input type = "text" name = "shift">
+        <input type = "text" name = "key">
+      </form>  
+      <div id = "button" class = "toCode"> Submit </div>
+
+      <div id="output"></div>
+    </div>
+
+
+    <div class = "col-xs-6">
+      <h2> Enter the message to be decoded in the first box, and the number that is has been shifted.</h2>
+      <form style = 'display : inline-block' name = "todeCode">
+        <input type ="text" name = "unshift">
+        <input type = "text" name = "key2">
+      </form>
+      <div id = "button" class = "toDecode"> Submit </div>
+
+      <div id = "output2"></div>
+    </div>  
+
+
+
+
+  </div>
+
+</div>
+
+<script src = "js.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+
+var shift = function(string, n){
+	var alphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
+	var alarr = alphabet.split("");
+	var string = string.toLowerCase().split(" ").join("").split("");
+	var answer = [];
+	var toomuch = "";
+	if(n > 25){
+		toomuch = "There is no reason to shift that much"
+	}
+	else{
+		sethkoch.fors(string, function(val, index, collection){
+			if(sethkoch.seeker(alarr, val) >= 0){
+				answer.push(alarr[sethkoch.seeker(alarr, val)+n]);
+			}
+		});
+	}
+	return toomuch || answer.join("")
+};
+
+
+var unshift = function(string, n){
+	var alphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
+	var alarr = alphabet.split("");
+	var string = string.toLowerCase().split(" ").join("").split("");
+	var answer = [];
+	var toomuch = "";
+	if(n > 25){
+		toomuch = "There is no reason to shift that much"
+	}
+	else{
+		sethkoch.fors(string, function(val, index, collection){
+			if(sethkoch.seeker(alarr, val) >= 0){
+				answer.push(alarr[sethkoch.seeker2(alarr, val)-n]);
+			}
+		});
+	}
+	return toomuch || answer.join("")
+};
+
+
+
+
+
+$(document).ready(function(){
+  $(".toCode").click(function(){
+		var userInput = $('input[name = shift]').val();
+		var userInput2 = $('input[name = key]').val();
+		userInput2 = Number(userInput2);
+		$('#output').append(shift(userInput, userInput2));
+	});
+  $(".toDecode").click(function(){
+  	    var userInput3 = $('input[name = unshift]').val();
+  	    var userInput4 = $('input[name = key2]').val();
+  	    userInput4 = Number(userInput4);
+  	    $('#output2').append(unshift(userInput3, userInput4));
+  });
+});
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

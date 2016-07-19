@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Secret Code App</title>
+</head>
+
+<body>
+
+<div id="output"></div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
+
+var alphabetArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+var randomLetter = function(){
+	var randomNumber = Math.floor((Math.random()*26)+1);
+	 var letter = alphabetArray[randomNumber -1];
+		return letter;
+	
+};
+
+var userInput = prompt("Enter your equidistant code here");
+
+var userNumber = prompt("Enter the number needed to decode");
+
+userNumber = 
+
+
+userInput = userInput.toLowerCase();
+
+var tester = "";
+
+for(var i =0; i<userInput.length; i++){
+	tester += userInput[i] + randomLetter() + randomLetter() + randomLetter();
+}
+
+$("#output").append(tester);
+
+
+
+
+</script>
+
+</body>
+</html>

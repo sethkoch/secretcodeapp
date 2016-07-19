@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<title>Shift Coder/Decoder</title>
+
+<style>
+</style>
+</head>
+<body>
+
+       <!-- form to collect message -->
+  <form style = 'display : inline-block' name ="toCode">
+    <input type = "text" name = "numberify">
+    
+  </form>  
+  <div id = "button" class = "numberify"> Submit </div>
+
+  <div id="output"></div>
+
+
+  <form style = 'display : inline-block' name = 'toDecode'>
+    <input type = "text" name = "denumberify">
+  </form>
+  <div id ="button" class = "denumberify"> Submit </div>
+
+
+  <div id = "output2"></div>
+
+
+
+
+
+
+
+<script src = "js.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+
+var numberCoder = function(string){
+	var newArray =  string.split(" ").join("").split("");
+	var answer = [];
+	for(var i = 0; i < string.length; i++){
+		answer.push(newArray[i].charCodeAt());
+
+	}
+	return answer.join(",");
+}
+
+var numberDeCoder = function(){
+  var newArray = [];
+  var answer = [];
+  sethkoch.fors(arguments, function(item){
+  	newArray.push(item);
+  })
+  sethkoch.fors(newArray, function(item){
+  	answer.push(String.fromCharCode(item))
+  })
+  return answer.join("");
+};
+
+
+
+
+
+$(document).ready(function(){
+  $(".numberify").click(function(){
+    var userInput = $('input[name = numberify]').val();
+    console.log(userInput)
+    $('#output').append(numberCoder(userInput));
+	});
+
+  $(".denumberify").click(function(){
+    var userInput2 = $('input[name = denumberify]').val();
+    userInput2 = userInput2.forEach(function(num){return Number(num);});
+    $('output2').append(numberDeCoder(userInput2))
+  })
+});
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>

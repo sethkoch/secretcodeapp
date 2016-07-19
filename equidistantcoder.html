@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Secret Code App</title>
+<link rel = "stylesheet" type = "text/css" href = "style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class = "fluid-container">
+
+  <h2 class = "text-center"> Equi Distant Coder </h2>
+
+  <br>
+  <br>
+       
+  <div class = "row">
+    <div class = 'col-xs-6'>
+      <h3 class="text-center"> Encode your message</h3>
+      <h4 class="text-center"> In the first box type your message, in the second type the number of random letters to place between each letter.</h4>
+       <!-- form to collect message -->
+      <form style = 'display : inline-block' name ="toCode">
+        <input type = "text" name = "original">
+        <input type = "text" name = "originalNumber">
+      </form>  
+      <div id = "button" class = "toCode"> Submit </div>
+
+      <div id="output"></div>
+    </div>
+       <!-- form to decode message -->
+    <div class = 'col-xs-6'>
+      <h3 class="text-center"> Decode your message</h3>
+      <h4 class="text-center"> In the first box type your message, in the second type the number of random letters that were used to encode the message.</h4>
+      <form style = 'display : inline-block' name = "toDecode">
+        <input type = 'text' name = "decoded">
+        <input type = 'text' name = "decodedNumber">
+      </form>
+      <div id = "button" class = "toDecode"> Submit </div>
+
+      <div id ="output2"></div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src = "js.js"></script>
+<script>
+
+var alphabetArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+var randomLetter = function(){
+	var randomNumber = Math.floor((Math.random()*26)+1);
+	 var letter = alphabetArray[randomNumber -1];
+		return letter;
+	
+};
+
+var equiMaker = function(string, n){
+	var tester = "";
+    string = string.toLowerCase().split(" ").join("");
+ for(var i =0; i<string.length; i++){
+	tester += string[i]; 
+	for(var j = 0; j < n; j++){
+		tester +=  randomLetter(); 
+	}
+ }
+     return tester;
+}
+
+var equiDecode = function(string, n){
+	var decodeArray = [];
+	var counter = n + 1;
+	string = string.toLowerCase().split(" ").join("").split("");
+	decodeArray.push(string[0]);
+	sethkoch.fors(string, function(item,key){
+      if(key === counter){
+      	decodeArray.push(item);
+      	counter = counter + n + 1;
+      }
+    })
+    return decodeArray.join("");
+}
+
+// var userInput = prompt("Enter your stuff here")
+// var userInput2 = prompt("Number of random letters to fill with")
+// var userInput3 = prompt("Message to decode");
+// var userInput4 = prompt("Special number");
+
+
+// userInput = userInput.toLowerCase();
+// userInput2 = Number(userInput2);
+// userInput3 = userInput3.toLowerCase();
+// userInput4 = Number(userInput4);
+
+
+$(document).ready(function(){
+	// To code the original message
+	$(".toCode").click(function(){
+		var userInput = $('input[name = original]').val();
+		var userInput2 = $('input[name = originalNumber]').val();
+		$('#output').append(equiMaker(userInput, userInput2));
+	});
+   
+    $(".toDecode").click(function(){
+    	var userInput3 = $('input[name = decoded]').val();
+    	var userInput4 = $('input[name = decodedNumber]').val();
+    	userInput4 = Number(userInput4);
+    	$('#output2').append(equiDecode(userInput3, userInput4));
+    });
+
+})
+
+
+// $("#output").append(equiMaker(userInput, userInput2 ));
+// $("#output2").append(equiDecode(userInput3, userInput4));
+
+
+
+
+</script>
+
+</body>
+</html>

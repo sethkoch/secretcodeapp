@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<title>ALBM coder</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src = "js.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script>
+
+var shiftEncoder = function(string, n){
+	string = string.split(" ").join("").split("");
+	var alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+	var answer = [];
+    sethkoch.fors(string, function(item){
+      answer.push(function(item){
+      	if(n > 22){
+      		answer.push(alpha[sethkoch.seeker(alpha, item) + n])
+      	}
+      })
+    })
+    return answer.join("");
+}
+
+console.log(shiftEncoder(" w Yesterday I saw a dog", 3))
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<title>ALBM coder</title>
+</head>
+<body>
+  <form style = "display : inline-block" name="code">
+    <input type="text" name="codeItem"/>
+  </form>
+  <div id = "button">Submit</div>
+
+
+  
+  
+  <div id = "result"></div>
+  <div class = "container"></div>
+
+
+
+
+
+<script src = "js.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script>
+
+var albmcoder =  function(string){
+	var amArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"];
+	var nzArray = ["n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var answer = [];
+    var tryAgain = "";
+	 string = string.toLowerCase().split("");
+
+	sethkoch.fors(string, function(item){
+		if(sethkoch.seeker(amArray, item) === -1){
+			answer.push(amArray[sethkoch.seeker(nzArray, item)]);
+		}
+		else if(sethkoch.seeker(nzArray, item) === -1){
+			answer.push(nzArray[sethkoch.seeker(amArray, item)]);
+		}
+	
+		else{
+			tryAgain = "We can only code/ decode letters a - z.  You must spell out numbers, and you cannot use any symbols."
+		}
+	});
+
+		return tryAgain || answer.join("");
+
+}
+
+
+$(document).ready(function(){
+  $('#button').click(function(){
+  	var userIn = $('input[name = codeItem]').val();
+  	
+  	$('#result').append(albmcoder(userIn));
+  });
+});
+
+// var userInput = prompt("Type in your code to be encoded or decoded");
+
+
+
+// alert(albmcoder(userInput));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
