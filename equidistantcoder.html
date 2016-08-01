@@ -2,13 +2,26 @@
 <html>
 <head>
 <title>Secret Code App</title>
-<link rel = "stylesheet" type = "text/css" href = "style.css">
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<link rel = "stylesheet" type = "text/css" href = "style.css">
 </head>
 
-<body>
+<body style="background-image:url('http://www.secretcodeapp.com/images/sand.jpg')">
 
-<div class = "fluid-container">
+
+<nav class="navbar navbar-default navbar-static-top container-fluid" id="navbar">
+  <a href="http://www.secretcodeapp.com"><button class="btn btn-primary navbar-btn">Home</button></a>
+  <a href="http://www.secretcodeapp.com/albmencoder.html"><button class="btn btn-primary navbar-btn">Albm</button></a>
+  <a href="http://www.secretcodeapp.com/equidistantcoder.html"><button class="btn btn-primary navbar-btn">Equi Distant</button></a>
+  <a href="http://www.secretcodeapp.com/shiftcoder.html"><button class="btn btn-primary navbar-btn">Shift</button></a>
+  <a href="http://www.secretcodeapp.com/numberfy.html"><button class="btn btn-primary navbar-btn">Numberfy</button></a>
+</nav>
+
+
+
+<div class = "container-fluid">
 
   <h2 class = "text-center"> Equi Distant Coder </h2>
 
@@ -20,25 +33,27 @@
       <h3 class="text-center"> Encode your message</h3>
       <h4 class="text-center"> In the first box type your message, in the second type the number of random letters to place between each letter.</h4>
        <!-- form to collect message -->
-      <form style = 'display : inline-block' name ="toCode">
+      <center><form style = 'display : inline-block' name ="toCode">
         <input type = "text" name = "original">
         <input type = "text" name = "originalNumber">
-      </form>  
-      <div id = "button" class = "toCode"> Submit </div>
+      </form> 
+      <button class = "btn btn-primary toCode"> Submit </button></center>
 
-      <div id="output"></div>
+      <center><div id="output" class="outputShift well"></div></center>
+      <center><button class="btn btn-primary printer">Print your code</button></center>
     </div>
        <!-- form to decode message -->
     <div class = 'col-xs-6'>
       <h3 class="text-center"> Decode your message</h3>
       <h4 class="text-center"> In the first box type your message, in the second type the number of random letters that were used to encode the message.</h4>
-      <form style = 'display : inline-block' name = "toDecode">
+      <center><form style = 'display : inline-block' name = "toDecode" >
         <input type = 'text' name = "decoded">
         <input type = 'text' name = "decodedNumber">
       </form>
-      <div id = "button" class = "toDecode"> Submit </div>
+      <button class = "btn btn-primary toDecode"> Submit </button></center>
 
-      <div id ="output2"></div>
+      <center><div id ="output2" class="outputShift well"></div></center>
+      <center><button class="btn btn-primary printer2">Print your code</button></center>
     </div>
   </div>
 
@@ -119,7 +134,13 @@ $(document).ready(function(){
 // $("#output").append(equiMaker(userInput, userInput2 ));
 // $("#output2").append(equiDecode(userInput3, userInput4));
 
+$('.printer').click(function(){
+  sethkoch.printSpec('#output');
+})
 
+$('.printer2').click(function(){
+  sethkoch.printSpec('#output2');
+})
 
 
 </script>

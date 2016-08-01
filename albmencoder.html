@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css" />
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css" />
 <title>ALBM coder</title>
 </head>
-<body>
+<body style="background-image:url('http://www.secretcodeapp.com/images/sand.jpg')">
 
-<div class = "fluid-container">
 
-  <h2 class = "text-center"> ALBM </h2>
+<nav class="navbar navbar-default navbar-static-top container-fluid" id="navbar">
+  <a href="http://www.secretcodeapp.com"><button class="btn btn-primary navbar-btn">Home</button></a>
+  <a href="http://www.secretcodeapp.com/albmencoder.html"><button class="btn btn-primary navbar-btn">Albm</button></a>
+  <a href="http://www.secretcodeapp.com/equidistantcoder.html"><button class="btn btn-primary navbar-btn">Equi Distant</button></a>
+  <a href="http://www.secretcodeapp.com/shiftcoder.html"><button class="btn btn-primary navbar-btn">Shift</button></a>
+  <a href="http://www.secretcodeapp.com/numberfy.html"><button class="btn btn-primary navbar-btn">Numberfy</button></a>
+</nav>
 
- <div class = "text-center"><form style = "display : inline-block" name="code">
-    <input type="text" name="codeItem"/>
-  </form>
-  <div id = "button">Submit</div>
-  <br>
-  <br>
-  <div class ="well" id = "result"></div>
+
+
+<div class = "container-fluid">
+ 
+  <div class="body"> 
+	  <h2 class = "text-center"> ALBM </h2>
+
+	 <div class = "text-center"><form style = "display : inline-block" name="code">
+	    <input type="text" name="codeItem"/>
+	  </form>
+	  <button class="btn btn-danger" id = "button" autofocus>Submit</button>
+	  <br>
+	  <br>
+	  <div class ="well" id = "result"></div>
+	  <center><button class="btn btn-primary printer">Print out your code!</button></center>
+
+	 </div>
  </div>
-
-
-  
-  
-  
-  
-
 
 
 </div>
 
 <script src = "js.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script> 
 
+function stopRKey(evt) { 
+  var evt = (evt) ? evt : ((event) ? event : null); 
+  var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null); 
+  if ((evt.keyCode == 13) && (node.type=="text"))  {return false;} 
+} 
+
+document.onkeypress = stopRKey; 
+
+</script>
 <script>
 
 var albmcoder =  function(string){
@@ -69,11 +88,9 @@ $(document).ready(function(){
   });
 });
 
-// var userInput = prompt("Type in your code to be encoded or decoded");
-
-
-
-// alert(albmcoder(userInput));
+$('.printer').click(function(){
+	sethkoch.printSpec('#result');
+})
 
 
 

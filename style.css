@@ -1,28 +1,78 @@
+#navbar {
+	width : 30%;
+
+	text-align:center;
+	background-color:black;
+	margin-top:20px;
+	border-radius:8px;
+	border:0;
+	padding:4px;
+
+}
+
+.body{
+	margin-top: 180px;
+
+}
+	
+
+
+#video{
+
+	position:fixed;
+	z-index:-100;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	overflow:hidden;
+
+	
+	
+
+}
+
+#movie {
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:auto;
+    height:auto;
+    min-width:100%;
+    min-height:100%;
+    -webkit-transform:translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+}
+
+@media (max-width: 767px){
+	#video {
+		background: url("http://www.secretcodeapp.com/images/moon.jpg");
+	}
+	#movie{
+		display:none;
+	}
+}
+
+
+
+
 #header{
 	margin-top: 10px;
 	font-size: 19 px;
 	font-family:cursive;
 }
 
-#button{
-    display: inline-block;
-    height:20px;
-	width:70px;
-	background-color:#cc0000;
-	font-family:arial;
-	font-weight:bold;
-	color:#ffffff;
-	border-radius: 5px;
-	text-align:center;
-	margin-top:4px;
-	padding-top: 0px
-}
+
 
 #head1{
 	background-color = blue;
 }
 
 .row{
+
 	margin-top: 10px;
 	margin-right: 10px;
 	margin-left: 10px;
@@ -30,21 +80,26 @@
 }
 
 #title {
-	color: indigo;
+	color: yellow;
 
 }
 
 
 .frontList{
-	border: 7px solid black;
+	border: 2px solid black;
 	margin: 4px 4px 4px 4px;
 	font-size: 18px;
+	background-color:white;
+	padding:8px;
+	border-radius:10px;
 }
 
 li:hover{
-	transform: scale(1.1);
+	transform: scale(1.4);
 
 }
+
+
 
 #result {
 	width: 50%;
@@ -66,10 +121,56 @@ ul {
 }
 
 
+#hackpicture{
+	margin-left:180px;
+}
+
+#binocpiture{
+	margin-left: 0px;
+}
+
+#fpLiTitle{
+	display:inline-block;
+	background-color:yellow;
+	color:blue;
+	border-radius:8px;
+}
+
+body {
+	
+	background-color:black;
+}
+
+.codeNames{
+	font-size:20px;
+	color:orange;
+}
+
+
+a:hover {
+   text-decoration:none;
+}
+
+.output {
+	background-color:white;
+}
 
 
 
+#numberifyTitle{
+	display:inline-block;
+	background-color:yellow;
+	padding:5px;
+	border-radius:9px;
+	font-family:cursive, monospace;
 
+}
+
+.outputShift{
+	background-color:white;
+	word-wrap: break-word;
+	max-width: 400px;
+}
 
 
 

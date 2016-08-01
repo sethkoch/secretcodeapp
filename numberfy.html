@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>Numberfy</title>
+
+<style>
+</style>
+</head>
+<body style="background-image:url('http://www.secretcodeapp.com/images/sand.jpg')">
+
+<div class="row">
+  <nav class="navbar navbar-default navbar-static-top container-fluid" id="navbar">
+    <a href="http://www.secretcodeapp.com"><button class="btn btn-primary navbar-btn">Home</button></a>
+    <a href="http://www.secretcodeapp.com/albmencoder.html"><button class="btn btn-primary navbar-btn">Albm</button></a>
+    <a href="http://www.secretcodeapp.com/equidistantcoder.html"><button class="btn btn-primary navbar-btn">Equi Distant</button></a>
+    <a href="http://www.secretcodeapp.com/shiftcoder.html"><button class="btn btn-primary navbar-btn">Shift</button></a>
+    <a href="http://www.secretcodeapp.com/numberfy.html"><button class="btn btn-primary navbar-btn">Numberfy</button></a>
+  </nav>
+</div>
+
+
+<!-- Website: -->
+<div class="container-fluid">
+       <!-- form to collect message -->
+
+  <center><h1 id="numberifyTitle">N</h1></center>
+
+  <div class="row">   
+    <center><div class="col-md-6">    
+      <form style = 'display : inline-block' name ="toCode">
+        <input type = "text" name = "numberify">
+        
+      </form>  
+      <button class="btn btn-primary numberify" id = "button" > Submit </button>
+
+      <div id="output" class="outputShift well"></div>
+      <center><button class="btn btn-primary printer">Print out your code</button></center>
+    </div>
+
+    <div class="col-md-6">
+      <form style = 'display : inline-block' name = 'toDecode'>
+        <input type = "text" name = "denumberify">
+      </form>
+      <button class="btn btn-primary denumberify" id ="button" > Submit </button>
+
+
+      <div id = "output2" class="outputShift well"></div>
+      <center><button class="btn btn-primary printer2">Print out your code</button></center>
+    </div>
+  </div>
+
+</div>
+
+
+   
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src = "js.js"></script>
+<script> 
+
+function stopRKey(evt) { 
+  var evt = (evt) ? evt : ((event) ? event : null); 
+  var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null); 
+  if ((evt.keyCode == 13) && (node.type=="text"))  {return false;} 
+} 
+
+document.onkeypress = stopRKey; 
+
+</script>
+
+<script>
+
+var numberCoder = function(string){
+	var newArray =  string.split(" ").join("").split("");
+  console.log(newArray);
+	var answer = [];
+	for(var i = 0; i < newArray.length; i++){
+		answer.push(newArray[i].charCodeAt());
+
+	}
+	return answer.join(",");
+}
+
+var numberDeCoder = function(string){
+  var newArray = string.split(",");
+  var something = newArray.map(function(num){return Number(num);});
+  var answer = something.map(function(num){return String.fromCharCode(num);});
+  return answer.join("");
+}
+  
+
+
+
+
+
+$(document).ready(function(){
+  $(".numberify").click(function(){
+    
+    var userInput = $('input[name = numberify]').val();
+    
+    $('#output').html(numberCoder(userInput));
+	});
+
+  $(".denumberify").click(function(){
+    var userInput2 = $('input[name = denumberify]').val();
+    
+    $('#output2').html(numberDeCoder(userInput2));
+  });
+});
+
+setTimeout(function(){
+$('#numberifyTitle').append('u');
+}, 500);
+setTimeout(function(){
+$('#numberifyTitle').append('m');
+}, 1000);
+setTimeout(function(){
+$('#numberifyTitle').append('b');
+}, 1500);
+setTimeout(function(){
+$('#numberifyTitle').append('e');
+}, 2000);
+setTimeout(function(){
+$('#numberifyTitle').append('r');
+}, 2500);
+setTimeout(function(){
+$('#numberifyTitle').append('f');
+}, 3000);
+setTimeout(function(){
+$('#numberifyTitle').append('y');
+}, 3500);
+
+
+$('.printer').click(function(){
+  sethkoch.printSpec('#output');
+})
+
+$('.printer2').click(function(){
+  sethkoch.printSpec('#output2');
+})
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

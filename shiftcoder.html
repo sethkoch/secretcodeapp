@@ -8,9 +8,19 @@
 <style>
 </style>
 </head>
-<body>
+<body style="background-image:url('http://www.secretcodeapp.com/images/sand.jpg')">
 
-<div class="fluid-container">
+
+<nav class="navbar navbar-default navbar-static-top container-fluid" id="navbar">
+  <a href="http://www.secretcodeapp.com"><button class="btn btn-primary navbar-btn">Home</button></a>
+  <a href="http://www.secretcodeapp.com/albmencoder.html"><button class="btn btn-primary navbar-btn">Albm</button></a>
+  <a href="http://www.secretcodeapp.com/equidistantcoder.html"><button class="btn btn-primary navbar-btn">Equi Distant</button></a>
+  <a href="http://www.secretcodeapp.com/shiftcoder.html"><button class="btn btn-primary navbar-btn">Shift</button></a>
+  <a href="http://www.secretcodeapp.com/numberfy.html"><button class="btn btn-primary navbar-btn">Numberfy</button></a>
+</nav>
+
+
+<div class="container-fluid">
 
   <h2 class = "text-center"> Shift encoder</h2>
   <br>
@@ -18,28 +28,30 @@
 
 
   <div class = "row">
-    <div class = "col-xs-6">
+    <div class = "col-xs-5 col-xs-offset-1" >
       <h2> Enter the message to be encoded in the first box, and the number to shift in the second.</h2>
        <!-- form to collect message -->
       <form style = 'display : inline-block' name ="toCode">
         <input type = "text" name = "shift">
         <input type = "text" name = "key">
       </form>  
-      <div id = "button" class = "toCode"> Submit </div>
+      <button class = "btn btn-primary toCode"> Submit </button>
 
-      <div id="output"></div>
+      <div id="output" class="outputShift well"></div>
+      <button class="btn btn-primary printer">Print out your code</button>
     </div>
 
 
-    <div class = "col-xs-6">
+    <div class = "col-xs-5 col-xs-offset-1">
       <h2> Enter the message to be decoded in the first box, and the number that is has been shifted.</h2>
       <form style = 'display : inline-block' name = "todeCode">
         <input type ="text" name = "unshift">
         <input type = "text" name = "key2">
       </form>
-      <div id = "button" class = "toDecode"> Submit </div>
+      <button class = "btn btn-primary toDecode"> Submit </button>
 
-      <div id = "output2"></div>
+      <div id = "output2" class="outputShift well"></div>
+      <button class="btn btn-primary printer2">Print out your code</button>
     </div>  
 
 
@@ -113,7 +125,13 @@ $(document).ready(function(){
 
 
 
+$('.printer').click(function(){
+  sethkoch.printSpec('#output');
+})
 
+$('.printer2').click(function(){
+  sethkoch.printSpec('#output2');
+})
 
 
 
