@@ -31,10 +31,10 @@
   <div class="row">   
     <center><div class="col-md-6">    
       <form style = 'display : inline-block' name ="toCode">
-        <input type = "text" name = "numberify">
+        <input type = "text" name = "toBinary">
         
       </form>  
-      <button class="btn btn-primary numberify" id = "button" > Submit </button>
+      <button class="btn btn-primary toBinary" id = "button" > Submit </button>
 
       <div id="output" class="outputShift well"></div>
       <center><button class="btn btn-primary printer">Print out your code</button></center>
@@ -77,12 +77,12 @@ document.onkeypress = stopRKey;
 
 <script>
 
-var numberCoder = function(string){
+var toBinary = function(string){
   var newArray =  string.split(" ").join("").split("");
   console.log(newArray);
   var answer = [];
   for(var i = 0; i < newArray.length; i++){
-    answer.push(newArray[i].charCodeAt());
+    answer.push(newArray[i].charCodeAt(2));
 
   }
   return answer.join(",");
@@ -101,11 +101,11 @@ var numberDeCoder = function(string){
 
 
 $(document).ready(function(){
-  $(".numberify").click(function(){
+  $(".toBinary").click(function(){
     
-    var userInput = $('input[name = numberify]').val();
+    var userInput = $('input[name = toBinary]').val();
     
-    $('#output').html(numberCoder(userInput));
+    $('#output').html(toBinary(userInput));
   });
 
   $(".denumberify").click(function(){
