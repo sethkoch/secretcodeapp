@@ -68,12 +68,8 @@
 
 var alphabetArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
-var randomLetter = function(){
-	var randomNumber = Math.floor((Math.random()*26)+1);
-	 var letter = alphabetArray[randomNumber -1];
-		return letter;
-	
-};
+var randomLetter =() => alphabetArray[Math.floor((Math.random()*26))];
+		
 
 var equiMaker = function(string, n){
 	var tester = "";

@@ -65,10 +65,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>
 
+var alphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz".split("");
+
 var shift = function(string, n){
-	var alphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
-	var alarr = alphabet.split("");
-	var string = string.toLowerCase().split(" ").join("").split("");
+	var string = string.replace(/ |'|!|,|\.|\?/g, "");
 	var answer = [];
 	var toomuch = "";
 	if(n > 25){

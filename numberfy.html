@@ -77,23 +77,10 @@ document.onkeypress = stopRKey;
 
 <script>
 
-var numberCoder = function(string){
-	var newArray =  string.split(" ").join("").split("");
-  console.log(newArray);
-	var answer = [];
-	for(var i = 0; i < newArray.length; i++){
-		answer.push(newArray[i].charCodeAt());
+var numberCoder = (string) => string.split(" ").join("").split("").map(function(item){return item.charCodeAt();}).join(",");
+	
+var numberDeCoder=(string)=>string.split(",").map(function(num){return Number(num);}).map(function(num){return String.fromCharCode(num);}).join("");
 
-	}
-	return answer.join(",");
-}
-
-var numberDeCoder = function(string){
-  var newArray = string.split(",");
-  var something = newArray.map(function(num){return Number(num);});
-  var answer = something.map(function(num){return String.fromCharCode(num);});
-  return answer.join("");
-}
   
 
 
